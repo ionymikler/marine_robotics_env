@@ -16,6 +16,7 @@ services:
     network_mode: host
     ipc: host
     # Needed to display graphical applications
+    privileged: True
     environment:
       # Allows graphical programs in the container.
       - DISPLAY=${DISPLAY}
@@ -52,7 +53,7 @@ services:
       target: dev
       args:
         - UID=${UID:-1000}
-        - GID=${UID:-1000}
+        - GID=${UID:-1000}  
         - USERNAME=${USERNAME:-devuser}
     #environment:
       #- "ROS_IP=xxx.xx.xx.xx"
